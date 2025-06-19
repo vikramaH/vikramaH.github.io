@@ -1,0 +1,760 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<body bgcolor="yellow"> <!--"00FF00" for green -->
+<title>शुषा <=> यूनिकोड परिवर्तित्र</title>
+
+<B><Font color = darkblue><CENTER> शुषा <=> यूनिकोड परिवर्तित्र (06-07-2009) </font></B><br>
+<Font color = blue>Last update: 22-02-2015</font>
+
+<script type="text/javascript">
+
+/*
+This is probably the complete shusha mapping:
+
+"\," ,	"ऌ" ,
+"\-" ,	"त्त्" ,
+"." ,	"ङ" ,
+"\/" ,	"क्त" ,
+
+"0" ,	"ऋ" ,
+"1" ,	"ॐ" ,
+"3" ,	"ख्" ,
+"4" ,	"रू" ,
+"5" ,	"त्" ,
+"6" ,	"ज्ञ" ,
+"2" ,	"\"" ,
+"7" ,	"\'" ,
+"8" ,	"ह्य" ,
+"9" ,	"हृ" ,
+
+"!" ,	"०" ,
+"\"" ,	"१" ,
+"#" ,	"२" ,
+"$" ,	"३" ,
+"%" ,	"४" ,
+"\&" ,	"५" ,
+"\'" ,	"६" ,
+"\(" ,	"७" ,
+"\)" ,	"८" ,
+"\*" ,	"९" ,
+
+"\:" ,	"ह्" ,
+"\;" ,	"ट्ट" ,
+"@" ,	"क्" ,
+"A" ,	"अ" ,
+"B" ,	"भ्" ,
+"C" ,	"छ" ,
+"D" ,	"ड" ,
+"E" ,	"श्र्" ,
+"F" ,	"फ्" ,
+"G" ,	"घ्" ,
+"H" ,	"ञ्" ,
+"J" ,	"झ्" ,
+"K" ,	"ख" ,
+"L" ,	"ळ" ,
+"N" ,	"ण्" ,
+"P" ,	"प्" ,
+"Q" ,	"ध्" ,
+"S" ,	"श्" ,
+"T" ,	"ट" ,
+"V" ,	"द्य" ,
+"W" ,	"द्व" ,
+"X" ,	"श्" ,
+"Y" ,	"ष्" ,
+"Z" ,	"ढ" ,
+"\[" ,	"इ" ,
+"\]" ,	"उ" ,
+"_" ,	"द्द" ,
+"`" ,	"्र" ,
+
+"b" ,	"ब्" ,
+"c" ,	"च्" ,
+"d" ,	"द" ,
+"e" ,	"ए" ,
+"f" ,	"फ" ,
+"g" ,	"ग्" ,
+"h" ,	"ह" ,
+"j" ,	"ज्" ,
+"k" ,	"क" ,
+"l" ,	"ल्" ,
+"m" ,	"म्" ,
+"n" ,	"न्" ,
+"p" ,	"प" ,
+"q" ,	"थ्" ,
+"r" ,	"र" ,
+"s" ,	"स्" ,
+"t" ,	"त" ,
+"v" ,	"व्" ,
+"w" ,	"द्ध" ,
+"x" ,	"क्ष्" ,
+"y" ,	"य्" ,
+"z" ,	"ठ" ,
+"\{" ,	"ठ्ठ" ,
+"\}" ,	"ऊ" ,
+"\~" ,	"त्र" ,
+"š" ,	"ई" ,
+"œ" ,	"ह्र" ,
+"Ÿ" ,	"जि" ,
+"É" ,	"रु" ,
+"Ë" ,	"क्र" ,
+"Ì" ,	"कृ" ,
+"Í" ,	"फ्र" ,
+"Î" ,	"फृ" ,
+"Ï" ,	"श्" ,
+"Ó" ,	"ख़" ,
+"Ô" ,	"फ़" ,
+"Ù" ,	"न्न" ,
+
+
+"I" ,	"ी" ,
+"u" ,	"ु" ,
+"U" ,	"ू" ,
+"R" ,	"ृ" ,
+"o" ,	"े" ,
+"O" ,	"ै" ,
+"Ü" ,	"ो" ,
+"Ý" ,	"ौ" ,
+"M" ,	"ं" ,
+"Ð" ,	"ँ" ,
+"\+" ,	"ः" ,
+"\\" ,	"्" ,
+"\^" ,	"ॅ" ,
+"\|" ,	"ऽ" ,
+"\<" ,	"़" ,
+
+
+"\>" ,	"।" ,
+
+"¡" ,	"\{" ,
+"£" ,	"\}" ,
+"¤" ,	"\[" ,
+"¥" ,	"\]" ,
+"²" ,	"\!" ,
+"³" ,	"\(" ,
+"´" ,	"\)" ,
+"µ" ,	"\*" ,
+"À" ,	"\/" ,
+"Á" ,	"\:" ,
+"Â" ,	"\;" ,
+"Ã" ,	"\<" ,
+"Å" ,	"\>" ,
+"Æ" ,	"?" ,
+"Ç" ,	"@" ,
+"È" ,	"\|" ,
+"Ê" ,	"\," ,
+"\?" ,	"\^" ,
+"Ø" ,	"\^" ,
+"Ñ" ,	"!" ,
+"Ò" ,	"\\" ,
+"Õ" ,	"√" ,
+"Ä" ,	"\=" ,
+
+
+"a" ,	"ा" ,
+"i" ,	"ि" ,
+"-" ,	"reph" ,
+
+
+"Ö" ,	"\-" ,
+
+
+*/
+
+
+function convert_to_unicode()
+{
+
+var array_one = new Array( 
+"\)\-" , "\) \-" ,  // ")-" is a problem too.
+"\(-" , "\( -" ,
+
+"\-\-\-" , "___" ,  // added to decrease conversion time. dont know how!
+"\-\-" , "__" , 
+
+"k," ,	"क़" ,
+"K," ,	"ख़" ,
+"ga," ,	"ग़" ,
+"j," ,	"ज़्" ,
+"ja," ,	"ज़" ,
+"D," ,	"ड़" ,
+",D" ,	"ड़" ,
+"Z," ,	"ढ़" ,
+"F," ,	"फ़्" ,
+"f," ,	"फ़" ,
+
+"[-" ,	"ई" ,
+"[" ,	"इ" ,
+"]" ,	"उ" ,
+"}" ,	"ऊ" ,
+"?" ,	"ऋ" ,
+"\;" ,	"ऌ" ,
+"\!" ,	"ॐ" ,
+"\=" ,	"ङ" ,
+"\(" ,	"ह्य" ,
+"\)" ,	"हृ" ,
+
+":" ,	"ः" ,
+"\\" ,	"्" ,
+"^" ,	"ॅ" ,
+"|" ,	"ऽ" ,
+"º" ,	"़" ,
+"." ,	"। " ,
+
+"¹" ,	"–" ,
+"Ñ" ,	"!" ,
+//"," ,	"." ,
+"¸" ,	"," ,
+
+"º" ,	"." ,
+
+
+"Â" ,	";" ,
+"³" ,	"(" ,
+"´" ,	")" ,
+"¡" ,	"{" ,
+"£" ,	"}" ,
+"¤" ,	"[" ,
+"¥" ,	"]" ,
+"À" ,	"/" ,
+
+//"?’" ,	"Æ’" ,
+//"?”" ,	"Æ”" ,
+//"? " ,	"Æ " ,
+
+
+"`" ,	"्र" ,
+"/" ,	"्र" ,
+"$" ,	"रू" ,
+"&" ,	"ज्ञ" ,
+"+" ,	"ट्ट" ,
+"<" ,	"त्त्" ,
+">" ,	"क्त" ,
+"_" ,	"द्द" ,
+"{" ,	"ठ्ठ" ,
+"~" ,	"त्र" ,
+"#" ,	"ख्" ,
+"%" ,	"त्" ,
+"*" ,	"ह्" ,
+
+"œ" ,	"ह्र" ,
+"Ÿ" ,	"जि" ,
+"É" ,	"रु" ,
+"Ë" ,	"क्र" ,
+"Ì" ,	"कृ" ,
+"Í" ,	"फ्र" ,
+"Î" ,	"फृ" ,
+"Ï" ,	"श्" ,
+"@" ,	"क्" ,
+"Ó" ,	"ख़" ,
+"Ô" ,	"फ़" ,
+
+"द्दद्द" ,	"--" ,  
+
+"b" ,	"ब्" ,
+"B" ,	"भ्" ,
+"c" ,	"च्" ,
+"C" ,	"छ" ,
+"d" ,	"द" ,
+"D" ,	"ड" ,
+"E" ,	"श्र्" ,
+"f" ,	"फ" ,
+"F" ,	"फ्" ,
+"g" ,	"ग्" ,
+"G" ,	"घ्" ,
+"h" ,	"ह" ,
+"H" ,	"ञ्" ,
+"j" ,	"ज्" ,
+"J" ,	"झ्" ,
+"k" ,	"क" ,
+"K" ,	"ख" ,
+"l" ,	"ल्" ,
+"L" ,	"ळ" ,
+"m" ,	"म्" ,
+// M - anuswar
+"n" ,	"न्" ,
+"N" ,	"ण्" ,
+"p" ,	"प" ,
+"P" ,	"प्" ,
+"q" ,	"थ्" ,
+"Q" ,	"ध्" ,
+"r" ,	"र" ,
+"s" ,	"स्" ,
+"S" ,	"श्" ,
+"t" ,	"त" ,
+"T" ,	"ट" ,
+"v" ,	"व्" ,
+"V" ,	"द्य" ,
+"w" ,	"द्ध" ,
+"W" ,	"द्व" ,
+"x" ,	"क्ष्" ,
+"X" ,	"श्" ,
+"y" ,	"य्" ,
+"Y" ,	"ष्" ,
+"z" ,	"ठ" ,
+"Z" ,	"ढ" ,
+
+"AaO" ,	"औ" ,
+"Aao" ,	"ओ" ,
+"Aa^" ,	"ऑ" ,
+"Aa" ,	"आ" ,
+"A" ,	"अ" ,
+"eo" ,	"ऐ" ,
+"e" ,	"ए" ,
+"š" ,	"ई" ,
+
+
+"aO" ,	"ौ" ,
+"ao" ,	"ो" ,
+"a" ,	"ा" ,
+"I" ,	"ी" ,
+"u" ,	"ु" ,
+"U" ,	"ू" ,
+"R" ,	"ृ" ,
+"o" ,	"े" ,
+"O" ,	"ै" ,
+"Ð" ,	"ँ" ,
+"M" ,	"ं" ,
+
+"्ा" ,	"" ,
+"्ो" ,	"े" ,
+"्ौ" ,	"ै" ,
+"अो" ,	"ओ" ,
+"अा" ,	"आ" ,
+"आै" ,	"औ" ,
+"आे" ,	"ओ" ,
+"ाो" ,	"ो" ,
+"ाॅ" ,	"ॉ" ,
+"ॅा" ,	"ॉ" ,
+"ाे" ,	"ो" ,
+"ेा" ,	"ो" ,
+"ाै" ,	"ौ" ,
+"ैा" ,	"ौ" ,
+"््" ,	"्" ,
+
+"ॅं" ,	"ँ" ,
+"ंॅ" ,	"ँ" ,
+
+" ः" ,	" :"   )  
+
+var array_one_length = array_one.length ;
+
+var legacyTxt = document.getElementById("legacy_text").value  ;
+
+var processed_text = '' ;  //blank	
+	
+if(document.getElementById("is_HTML").checked) process_as_HTML (legacyTxt) 
+else process_as_Plain_Text (legacyTxt) ;
+
+document.getElementById("unicode_text").value = processed_text  ;
+
+
+function process_as_HTML (in_text)
+{
+
+var remaining_text = in_text  ;
+
+var present_position = 0 ;
+
+while ( present_position != -1 )
+{
+var indx_br1 = remaining_text.indexOf( "\<") ;
+// expand this logic such that if < is preceded by \ (escape), it is not counted as opening angle bracket.
+
+if (indx_br1 != -1)
+{
+var text_to_be_converted = remaining_text.substring( 0 , indx_br1 ) ;
+var indx_br2 = remaining_text.indexOf( "\>" , indx_br1+1) ;
+
+if (indx_br2 != -1)
+{
+var txt_within_ang_br = remaining_text.substring (indx_br1 , indx_br2+1) ; 
+var remaining_text = remaining_text.substring (indx_br2+1) ; 
+} else
+{
+var txt_within_ang_br = remaining_text.substring (indx_br1) ; 
+present_position = -1
+}
+
+} else
+{
+var text_to_be_converted = remaining_text ;
+var txt_within_ang_br = '' ;
+present_position = -1 ;  // end of file reached
+}
+
+    Replace_Symbols( text_to_be_converted ) ;
+
+    processed_text += modified_substring + txt_within_ang_br;
+}
+
+return processed_text
+	
+}
+
+function process_as_Plain_Text (in_text)
+{
+//************************************************************
+//  Break the long text into small bunches of batch_size or less characters each.
+//*************************************************************
+ 
+    var text_size = in_text.length ;
+ 
+    var sthiti1 = 0 ;  var sthiti2 = 0 ;  var chale_chalo = 1 ;
+ 
+    var batch_size = 6000;
+
+    while ( chale_chalo == 1 ) 
+    {
+     sthiti1 = sthiti2 ;
+
+     if ( sthiti2 < ( text_size - batch_size ) )  
+     { 
+      sthiti2 +=  batch_size ;
+	  while ( (in_text.charAt( sthiti2 ) != '\n')&(in_text.charAt( sthiti2 ) != '\t')&(in_text.charAt( sthiti2 ) != ' ') )   {sthiti2-- ;}
+     } 
+     else  { sthiti2 = text_size  ;  chale_chalo = 0 }
+
+    Replace_Symbols( in_text.substring ( sthiti1, sthiti2 ) ) ;
+
+    processed_text += modified_substring ;
+
+   }
+   
+return processed_text
+ 
+}   
+
+
+function Replace_Symbols( in_text )
+{
+
+modified_substring = in_text ;
+//substitute array_two elements in place of corresponding array_one elements
+
+if ( modified_substring != "" )  // if string to be converted is non-blank then no need of any processing.
+{
+for ( input_symbol_idx = 0 ; input_symbol_idx < array_one_length - 1;    input_symbol_idx=input_symbol_idx + 2 )
+
+{
+
+idx = 0  ;  // index of the symbol being searched for replacement
+
+while (idx != -1 ) //whie-00
+{
+
+modified_substring = modified_substring.replace( array_one[ input_symbol_idx ] , array_one[input_symbol_idx + 1] )
+idx = modified_substring.indexOf( array_one[input_symbol_idx] )
+
+} // end of while-00 loop
+} // end of for loop
+
+
+// following statements for adjusting postion of i maatraas.
+
+modified_substring = modified_substring.replace( /([i])([कखगघङचछजझञटठडढणतथदधनपफबभमयरलळवशषसहक़ख़ग़ज़ड़ढ़फ़य़ऱऩ])/g , "$2$1" ) ;
+
+modified_substring = modified_substring.replace( /([i])((्[कखगघङचछजझञटठडढणतथदधनपफबभमयरलळवशषसहक़ख़ग़ज़ड़ढ़फ़य़ऱऩ])+)/g , "$2$1" ) ;
+
+modified_substring = modified_substring.replace( /i/g , "ि" ) ;
+
+
+//following three statement for adjusting position of reph ie, half r .
+
+modified_substring = modified_substring.replace( /([कखगघङचछजझञटठडढणतथदधनपफबभमयरलळवशषसहक़ख़ग़ज़ड़ढ़फ़य़ऱऩ])([ािीुूृेैोौंँ]*)([\-])/g , "$3$1$2" ) ;
+
+modified_substring = modified_substring.replace( /(([कखगघङचछजझञटठडढणतथदधनपफबभमयरलळवशषसहक़ख़ग़ज़ड़ढ़फ़य़ऱऩ][्])+)([\-])/g, "$3$1" ) ;
+// Z is $3 here, NOT $2.
+
+modified_substring = modified_substring.replace( /\-/g , "र्" ) ;
+
+modified_substring = modified_substring.replace( /([ ]+)([ािीुूृेैोौ])/g , "$2" );
+
+// remove maatras typed wrongly
+modified_substring = modified_substring.replace( /([ंँ॰])([ािीुूृेैोौ])/g , "$2$1" );
+
+modified_substring = modified_substring.replace( /([ािीुूृेैोौंँ])([ािीुूृेैोौ])/g , "$1" ) ;
+
+} // end of IF  statement  meant to  supress processing of  blank  string.
+
+} // end of the function  Replace_Symbols
+ 
+} // end of Krutidev_to_unicode function
+
+
+
+//*****************************************************************
+
+
+function convert_to_legacy_font()
+{
+var array_one = new Array(
+"क़","ख़","ग़","ज़","ड़","ढ़","फ़",  // two-byte varnas
+"!",".","।",";","(",")","{","}","[","]","/","<","=",">",",","+","*","%",
+"ख़्","ख़","फ़्","फ़",
+//"क़ि","ख़ि","ग़ि","ज़ि","ड़ि","ढ़ि","फ़ि", 
+"ॐ", "?", // "Æ’","Æ”","Æ ",
+"ज्ञ","ह्य","हृ","ट्ट","त्त्","क्त","श्र","द्य","द्व","द्द","द्ध","क्ष्","क्ष","ठ्ठ","त्र","ह्र","जि",
+"क्रु","क्रू","्रु","्रू","रू","रु",
+"क्र","कृ","फ्र","फृ", //"न्न",
+"ड़","ढ़",
+"ट्र","ड्र","ढ्र","्र",
+
+"क़","ग़","ज़्",
+"क्","क","ख्","ख","ग्","ग","घ्","घ","ङ",  
+"च्","च","छ","ज़","ज्","ज","झ्","झ","ञ्","ञ",
+"ट","ठ","ड","ढ","ण्","ण",
+"त्","त","थ्","थ","द","ध्","ध","न्","न",
+"प्","प","फ्","फ","ब्","ब","भ्","भ","म्","म",
+
+"य्","य","र","ल्","ल","ळ","व्","व","श्","श","ष्","ष","स्","स","ह्","ह", // "श्","श्",
+
+"औ","ओ","ऑ","आ","अ","ई","ई","इ","उ","ऊ","ऋ","ऌ","ऐ","ए",   
+
+"ौ","ो","ॉ","ा","ी","ु","ू","ृ","े","ै","ँ","ं",":","ः","्","ॅ","ऽ","़")
+
+var array_two = new Array( 
+"क़","ख़","ग़","ज़","ड़","ढ़","फ़",  //one-byte varnas
+"Ñ","º",".","Â","³","´","¡","£","¤","¥","À","Ã","Ä","Å","¸","†","µ","‰",
+"K,","Ó","F,","Ô",
+//"ik¸","iK¸","iga¸","ija¸","iD¸","iZ¸","iPa¸", 
+"!","Æ", // "?’","?”","? ",
+"&","(",")","+","<",">","Ea","V","W","_","w","x","xa","{","~","œ","Ÿ",
+"Ëu","Ëu","`u","`U","$","É",
+"Ë","Ì","Í","Î", // "Ø",
+"D,","Z,",
+"T/","D/","Z/","`",
+
+"k,","ga,","j,",
+"@","k","#","K","g","ga","G","Ga","=",  
+"c","ca","C","ja,","j","ja","J","Ja","H","Ha",
+"T","z","D","Z","N","Na",
+"%","t","q","qa","d","Q","Qa","n","na",
+"P","p","F","f","b","ba","B","Ba","m","ma",
+
+"y","ya","r","l","la","L","v","va","S","Sa","Y","Ya","s","sa","*","h", // "X","Ï",
+
+"AaO","Aao","Aa^","Aa","A","š","[-","[","]","}","?",";","eo", "e",     
+
+"aO","ao","a^","a","I","u","U","R","o","O","Ð","M","Á",":","\\","^","|",",")
+  
+//************************************************************
+//Put "Enter chunk size:" line before "<textarea name= ..." if required to be used.    
+//************************************************************
+//Enter chunk size: <input type="text" name="chunksize" value="6000" size="7" maxsize="7" style="text-align:right"><br/><br/>
+//************************************************************
+// The following two characters are to be replaced through proper checking of locations:
+
+// "र्" (reph) 
+// "Z" )
+
+// "ि"  
+// "f" )
+
+
+    var array_one_length = array_one.length ;
+
+    var modified_substring = document.getElementById("unicode_text").value  ;
+
+    Replace_Symbols( ) ;
+
+    processed_text = modified_substring ;
+
+    document.getElementById("legacy_text").value = processed_text  ;
+
+
+//**************************************************
+
+function Replace_Symbols( )
+   {
+
+    // if string to be converted is non-blank then no need of any processing.
+    if (modified_substring != "" )  
+       {
+
+// first replace the two-byte nukta_varNa with corresponding one-byte nukta varNas.
+
+// modified_substring = modified_substring.replace ( /क़/ , "क़" )  ; 
+// modified_substring = modified_substring.replace ( /ख़‌/g , "ख़" )  ;
+// modified_substring = modified_substring.replace ( /ग़/g , "ग़" )  ;
+// modified_substring = modified_substring.replace ( /ज़/g , "ज़" )  ;
+// modified_substring = modified_substring.replace ( /ड़/g , "ड़" )  ;
+// modified_substring = modified_substring.replace ( /ढ़/g , "ढ़" )  ;
+// modified_substring = modified_substring.replace ( /ऩ/g , "ऩ" )  ;
+// modified_substring = modified_substring.replace ( /फ़/g , "फ़" )  ;
+// modified_substring = modified_substring.replace ( /य़/g , "य़" )  ;
+// modified_substring = modified_substring.replace ( /ऱ/g , "ऱ" )  ;
+
+
+        // code for replacing "ि" (chhotee ee kii maatraa) with "i"  and correcting its position too.
+        
+        var position_of_f = modified_substring.indexOf( "ि" )  ;
+         while ( position_of_f != -1 )  //while-02
+           {
+            var character_left_to_f = modified_substring.charAt( position_of_f - 1 )  ;
+            modified_substring = modified_substring.replace( character_left_to_f + "ि" ,  "i" + character_left_to_f )  ;
+
+            position_of_f = position_of_f - 1  ;
+
+            while (( modified_substring.charAt( position_of_f - 1 ) == "्" )  &  ( position_of_f != 0  ) )
+               {
+                var string_to_be_replaced = modified_substring.charAt( position_of_f - 2 ) + "्"  ;
+                  modified_substring = modified_substring.replace( string_to_be_replaced + "i", "i" + string_to_be_replaced ) ;
+
+                position_of_f = position_of_f - 2  ;
+               }
+            position_of_f = modified_substring.search( /ि/ , position_of_f + 1 ) ; // search for f ahead of the current position.
+
+           } // end of while-02 loop
+   //************************************************************     
+   //     modified_substring = modified_substring.replace( /fर्/g , "£"  )  ;
+   //************************************************************     
+        // Eliminating "र्" and putting  Z  at proper position for this.
+
+       set_of_matras = "ािीुूृेैोौं:ँॅ" 
+
+       modified_substring += '  '    ;  // add two spaces after the string to avoid UNDEFINED char in the following code.
+  
+      modified_substring = modified_substring.replace ( /-/g , "¹" )  ; 
+      modified_substring = modified_substring.replace ( /श्र्/g , "E" )  ; 
+      modified_substring = modified_substring.replace ( /त्र्य/g , "~\\ya" )  ; 
+
+       var space = " "
+       var position_of_half_R = modified_substring.indexOf( "र्" ) ;
+
+ //  alert(" 21. position_of_half_R = " + position_of_half_R);
+
+//************************************************************************************
+   while ( position_of_half_R > 0  )  // while-03
+   {
+    // "र्"  is two bytes long
+    var probable_position_of_Z = position_of_half_R + 2   ;  
+    var character_at_probable_position_of_Z = modified_substring.charAt( probable_position_of_Z )
+
+ // alert(" 3. probable_position_of_Z = "+probable_position_of_Z );
+ // alert(" 4. character_at_probable_position_of_Z = "+character_at_probable_position_of_Z );
+
+    // trying to find non-maatra position right to probable_position_of_Z .
+
+    while( set_of_matras.match( character_at_probable_position_of_Z ) != null ) // while-04 
+    {
+     probable_position_of_Z = probable_position_of_Z + 1 ;
+     character_at_probable_position_of_Z = modified_substring.charAt( probable_position_of_Z ) ;
+
+// alert(" 5. probable_position_of_Z = "+probable_position_of_Z );
+// alert(" 6. character_at_probable_position_of_Z = "+character_at_probable_position_of_Z );
+    } // end of while-04
+//************************************************************
+// check if the next character is a halant
+//************************************************************
+    var right_to_position_of_Z = probable_position_of_Z + 1 ;
+ // alert(" 7. right_to_position_of_Z = "+right_to_position_of_Z );
+
+    if (right_to_position_of_Z > 0)  // if-03
+    { var character_right_to_position_of_Z = modified_substring.charAt( right_to_position_of_Z )
+   // alert(" 8. character_right_to_position_of_Z = "+character_right_to_position_of_Z );
+//    while ("्".match( character_right_to_position_of_Z ) != null ) // while-05
+
+      while ( character_right_to_position_of_Z == "्" ) // while-05
+      {  
+//       halant found, move to next character
+         probable_position_of_Z = right_to_position_of_Z + 1 ;
+         character_at_probable_position_of_Z = modified_substring.charAt( probable_position_of_Z ) ;
+
+    // alert(" 9. probable_position_of_Z = "+probable_position_of_Z );
+    // alert("10. character_at_probable_position_of_Z = "+character_at_probable_position_of_Z );
+       
+         right_to_position_of_Z = probable_position_of_Z + 1 ;
+         character_right_to_position_of_Z = modified_substring.charAt( right_to_position_of_Z )
+
+    // alert("11. right_to_position_of_Z = "+right_to_position_of_Z );
+    // alert("12. character_right_to_position_of_Z = "+character_right_to_position_of_Z );
+      } // end of while-05
+
+    // alert("121. position_of_half_R = "+position_of_half_R);
+    // alert("122. probable_position_of_Z = "+probable_position_of_Z);
+
+   } // end of if-03
+//************************************************************
+
+       string_to_be_replaced = modified_substring.substr ( position_of_half_R + 2,(probable_position_of_Z - position_of_half_R)-1) ;
+//************************************************************
+//     check if character_right_to_position_of_Z is a space
+//       if (space.match(character_right_to_position_of_Z) != null) 
+//       {
+//          string_to_be_replaced = string_to_be_replaced.substr(0,string_to_be_replaced.length - 1)
+//        alert("13. string_to_be_replaced = "+string_to_be_replaced );
+//        alert("14. string_to_be_replaced.length ="+string_to_be_replaced.length);
+//       }
+       modified_substring = modified_substring.replace( "र्" + string_to_be_replaced, string_to_be_replaced + "-" ) ;
+
+//     alert("15. string_to_be_replaced = "+string_to_be_replaced );
+//     alert("16. modified_substring = "+modified_substring );
+       position_of_half_R = modified_substring.indexOf( "र्" ) ;
+//      alert("17. position_of_half_R = "+position_of_half_R )
+
+   } // end of while-03
+//***********************************************************
+
+modified_substring = modified_substring.substr ( 0 , modified_substring.length - 2 )  ;
+
+
+        //substitute array_two elements in place of corresponding array_one elements
+
+        for( input_symbol_idx = 0; input_symbol_idx < array_one_length; input_symbol_idx++ )
+           {
+            idx = 0  ;  // index of the symbol being searched for replacement
+
+            while (idx != -1 ) //whie-00
+               {
+                modified_substring = modified_substring.replace( array_one[ input_symbol_idx ] , array_two[input_symbol_idx] )
+                idx = modified_substring.indexOf( array_one[input_symbol_idx] )
+               } // end of while-00 loop
+           } // end of for loop
+
+        } // end of IF  statement  meant to  supress processing of  blank  string.
+       modified_substring = modified_substring.replace ( /-ao/g , "ao-" ) 
+       modified_substring = modified_substring.replace ( /-a/g , "a-" )  
+       modified_substring = modified_substring.replace ( /-I/g , "I-" )  
+       modified_substring = modified_substring.replace ( /\ -/g , "\-" )
+       modified_substring = modified_substring.replace ( /ki,/g , "ik," ) 
+       modified_substring = modified_substring.replace ( /Ki,/g , "iÓ" ) 
+       modified_substring = modified_substring.replace ( /gai,/g , "iga," ) 
+       modified_substring = modified_substring.replace ( /fi,/g , "iÔ" ) 
+       modified_substring = modified_substring.replace ( /Di,/g , "iD," ) 
+       modified_substring = modified_substring.replace ( /Zi,/g , "iZ," ) 
+       modified_substring = modified_substring.replace ( /jai,/g , "ija," ) 
+       modified_substring = modified_substring.replace ( /nai,/g , "ina," ) 
+       modified_substring = modified_substring.replace ( /ri,/g , "ir," ) 
+       modified_substring = modified_substring.replace ( /Li,/g , "iL," ) 
+
+    } // end of the function  Replace_Symbols( )
+
+  } // end of convert_to_Shusha function
+
+
+</script>
+</head>
+
+<body>
+<form name="form1"></br>
+<b>Shusha font</b> text-box<br/>
+<textarea name="TextToConvert" id="legacy_text" cols="92" rows="6"></textarea> <br>
+
+<div align="middle">
+<CENTER><input  type="button" name="converter" id="converter" value=" Convert to Unicode >> " onClick="convert_to_unicode();" accesskey="c" title="शॉर्टकट shift+alt+c">
+treating input as 
+<input name="pb" id="is_TEXT" type="radio" Checked> Plain Text <input name="pb" id="is_HTML" type="radio">HTML<br/> <br>
+</div>  <br>
+
+<b><CENTER>Unicode</b>text-box<br/>
+<textarea name="ConvertedText" id="unicode_text" cols="92" rows="6"></textarea>
+<br />
+
+<div align="middle">
+<input  type="button" id="converter" name="converter" value=" Convert to Shusha >> " onClick="convert_to_legacy_font();" accesskey="b" title="शॉर्टकट shift+alt+b"> 
+</div>
+
+</form>
+</body>
+</html>
